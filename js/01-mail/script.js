@@ -52,23 +52,69 @@ stampa un messaggio appropriato sull'esito del controllo.
 
 // SOLUZIONE #2 -----------------------------------------------------------------
 
+// // Ho un array di Email valide
+// const emailList = ['aaa', 'bbb', 'ccc', 'ddd']
+
+// // Chiedo all'utente la sua Email
+// const userEmail = prompt("Please enter your Email.");
+
+// // Dichiaro un array di utilità che conterrà l'indice della email cercata
+// let searchedEmailIndex = [];
+
+// for (let i = 0; i < emailList.length; i++) {
+
+//     if (userEmail === emailList[i]) {
+//       searchedEmailIndex.push(i);
+//     } else {
+//       console.log('Non corrisponde: ' + i)
+//     }
+
+// }
+
+// console.log('Email valida: ' + emailList[searchedEmailIndex])
+
+
+
+
+// SOLUZIONE #3 -----------------------------------------------------------------
+
 // Ho un array di Email valide
 const emailList = ['aaa', 'bbb', 'ccc', 'ddd']
 
 // Chiedo all'utente la sua Email
 const userEmail = prompt("Please enter your Email.");
+console.log('Input inserito: ' + userEmail)
 
-// Dichiaro un array di utilità che conterrà l'indice della email cercata
-let searchedEmailIndex = [];
+// Verifico il mio criterio di validità del dato inserito dall'utente
+isValid_userEmail = userEmail.length >= 3;
 
-for (let i = 0; i < emailList.length; i++) {
 
-    if (userEmail === emailList[i]) {
-      searchedEmailIndex.push(i);
-    } else {
-      console.log('Non corrisponde: ' + i)
+
+// SE la email inserita è un input valido
+if (isValid_userEmail) {
+
+    // Dichiaro prima la mia variabile SENTINELLA e poi
+    let isEmailFound = false;
+
+    // PER OGNI email presente nel mio array
+    for (let i = 0; i < emailList.length; i++) {
+        const currentEmail = emailList[i];
+
+        // SE l'email inserita corrisponde a quella controllata in quel momento nell'array
+        if (userEmail === currentEmail) {
+
+          // Metto un flag "true" alla mia variabile SENTINELLA, fermando di fatto il ciclo
+          isEmailFound = true;
+        }
     }
 
-}
+    // SE la mia variabile SENTINELLA riporta "true"
+    if (isEmailFound) {
+      // Stampo in console questo messaggio
+      console.log('Email valida: ' + userEmail)
+    } else {
+      // ALTRIMENTI stampo in console quest'altro messaggio
+      console.log('Email NON trovata')
+    }
 
-console.log('Email valida: ' + emailList[searchedEmailIndex])
+} 
