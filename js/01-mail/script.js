@@ -5,31 +5,37 @@ controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull'esito del controllo.
 */
 
-const emailList = ['laprima@email.it', 'laseconda@email.it', 'laterza@email.it']
+// WHILE: Finchè X non è = Y richiedi X
 
+let valueX = prompt("Please enter X");
 
-const userEmail = prompt('Inserisci la tua Email')
-
-
-for (let i = 0; i < emailList.length; i++) {
-    isValid_userEmail = (userEmail == emailList[i])
-    
-    console.log(emailList[i])
-
-    if (!isValid_userEmail) {
-      outputMessage = 'Email non trovata'
-    } else {
-      outputMessage = 'Email valida'
-    }
-
-    console.log(outputMessage)
+while(valueX !== "xxx"){
+       valueX = prompt("Please enter X again"); 
+       console.log('Input: ' + valueX);
 }
 
+console.log('valueX OK')
 
-// if (emailList.includes(userEmail)) {
-//   messaggio = 'Email valida'
-// } else {
-//   messaggio = 'Email NON valida'
+
+// // Ho una lista di Email valide
+// const emailList = ['1@test.it', '2@test.it', '3@test.it', '4@test.it']
+
+// // Dichiaro la variabile "i"
+// let i = 0;
+
+// // Chiedo all'utente la sua Email
+// let userEmail = prompt("Please enter your Email.");
+// console.log('User input: ' + userEmail);
+
+// // FINCHE' l'utente non inserisce una Email valida
+// while (!emailList.includes(userEmail)) { 
+
+//     // Chiedo nuovamente la sua Email
+//     userEmail = prompt("Wrong Email. Please enter egain.");
+//     console.log('User input: ' + userEmail);
+
 // }
 
-// console.log(messaggio)
+// // Stampo un alert che conferma che l'Email inserita è in lista, quindi valida
+// alert("Email OK");
+// console.log('Email OK: ' + userEmail)

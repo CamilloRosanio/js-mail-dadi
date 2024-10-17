@@ -10,33 +10,29 @@ const computerNumber = Math.floor(Math.random() * 6) + 1;
 console.log('Numero del Computer: ' + computerNumber)
 
 // Chiedo un numero al giocatore tramite Prompt
-let userNumber = parseInt(prompt('Inserisci un numero intero da 1 a 6'));
+const userNumber = parseInt(prompt('Inserisci un numero intero da 1 a 6'));
+console.log('Numero del Giocatore: ' + userNumber);
 
 // Dichiaro le condizioni in cui il umero inserito dal giocatore è valido
 let isValid_userNumber = (!isNaN(userNumber) && Number.isInteger(userNumber) && userNumber > 0 && userNumber <= 6);
+console.log('Il numero inserito è valido? ' + isValid_userNumber)
 
+let i = 0;
 
-
-// SE il numero inserito dal giocatore NON è valido,
-if (!isValid_userNumber) {
-
-  // FINCHE' il numero non è valido chiedo un nuovo numero al giocatore
-  while (!isValid_userNumber) {
-      userNumber = parseInt(prompt('Inserisci un numero intero da 1 a 6'))
-  }
-
-  // ALTRIMENTI
-} else {
-
-// SE il numero del giocatore supera quello del Computer
-if (userNumber > computerNumber) {
-  // STAMPO il messaggio di vittoria
-  console.log('Hai vinto!')
-
-// ALTRIMENTI
-} else {
-  // STAMPO il messaggio di sconfitta
-  console.log('Hai perso')
+// FINCHE' il numero non è valido chiedo un nuovo numero al giocatore
+while (userNumber !== isValid_userNumber) {
+  userNumber = parseInt(prompt('Inserisci un numero intero da 1 a 6'));
+  console.log('Numero non valido: ' + userNumber)
 }
 
-}
+
+// // SE il numero del giocatore supera quello del Computer
+// if (userNumber > computerNumber) {
+//   // STAMPO il messaggio di vittoria
+//   console.log('Hai vinto!')
+
+// // ALTRIMENTI
+// } else {
+//   // STAMPO il messaggio di sconfitta
+//   console.log('Hai perso')
+// }
