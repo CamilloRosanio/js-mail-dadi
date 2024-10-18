@@ -7,22 +7,6 @@ stampa un messaggio appropriato sull'esito del controllo.
 
 
 
-// Esempio di WHILE sempice ---------------------------------------------------------------------
-
-// WHILE: Finchè X non è = Y richiedi X
-
-// let valueX = prompt("Please enter X");
-
-// while(valueX !== "xxx"){
-//        valueX = prompt("Please enter X again"); 
-//        console.log('Input: ' + valueX);
-// }
-
-// console.log('valueX OK')
-
-
-
-
 
 // SOLUZIONE #1 -----------------------------------------------------------------
 
@@ -54,50 +38,52 @@ stampa un messaggio appropriato sull'esito del controllo.
 
 // SOLUZIONE #2 -----------------------------------------------------------------
 
-// // Ho un array di Email valide
-// const emailList = ['aaa', 'bbb', 'ccc', 'ddd']
+// Ho un array di Email valide
+const emailList = ['aaa', 'bbb', 'ccc', 'ddd']
 
-// // Chiedo all'utente la sua Email
-// const userEmail = prompt("Please enter your Email.");
-// console.log('Input inserito: ' + userEmail)
+// Chiedo all'utente la sua Email
+const userEmail = prompt("Please enter your Email.");
+console.log('Input inserito: ' + userEmail)
 
-// // Verifico il mio criterio di validità del dato inserito dall'utente, in questo caso un banale conteggio di caratteri come esempio.
-// const isValid_userEmail = userEmail.length >= 3;
+// Verifico il mio criterio di validità del dato inserito dall'utente, in questo caso un banale conteggio di caratteri come esempio.
+const isValid_userEmail = userEmail.length >= 3;
 
 
 
-// // SE la email inserita è un input valido
-// if (isValid_userEmail) {
+// SE la email inserita è un input valido
+if (isValid_userEmail) {
 
-//     // Dichiaro prima la mia variabile SENTINELLA e poi
-//     let isEmailFound = false;
+    // Dichiaro prima la mia variabile SENTINELLA e poi
+    let isEmailFound = false;
 
-//     // PER OGNI email presente nel mio array
-//     for (let i = 0; i < emailList.length; i++) {
-//         const currentEmail = emailList[i];
+    // PER OGNI email presente nel mio array
+    for (let i = 0; i < emailList.length; i++) {
+        const currentEmail = emailList[i];
 
-//         // SE l'email inserita corrisponde a quella controllata in quel momento nell'array
-//         if (userEmail === currentEmail) {
+        // SE l'email inserita corrisponde a quella controllata in quel momento nell'array
+        if (userEmail === currentEmail) {
 
-//           // Metto un flag "true" alla mia variabile SENTINELLA, fermando di fatto il ciclo
-//           isEmailFound = true;
-//         }
-//     }
+          // Metto un flag "true" alla mia variabile SENTINELLA, fermando di fatto il ciclo
+          isEmailFound = true;
+        }
+    }
 
-//     // OUTPUT CON IF
-//     // SE la mia variabile SENTINELLA riporta "true"
-//     if (isEmailFound) {
-//       // Stampo in console questo messaggio
-//       console.log('Email valida: ' + userEmail)
-//     } else {
-//       // ALTRIMENTI stampo in console quest'altro messaggio
-//       console.log('Email NON trovata')
-//     }
+    // OUTPUT CON IF
+    // SE la mia variabile SENTINELLA riporta "true"
+    if (isEmailFound) {
+      // Stampo in console questo messaggio
+      console.log('Email valida: ' + userEmail)
+    } else {
+      // ALTRIMENTI stampo in console quest'altro messaggio
+      console.log('Email NON trovata')
+    }
 
-//     // OUTPUT CON TERNARY OPERATOR
-//     // Si potrebbe anche impostare una "let" di outputMessage con operatore ternario che dia due valori in base a true o false
+    // OUTPUT CON TERNARY OPERATOR
+    // Si potrebbe anche impostare una "let" di outputMessage con operatore ternario che dia due valori in base a true o false
 
-// } 
+} else {
+  console.log('Valore inserito non valido')
+}
 
 
 
@@ -110,16 +96,16 @@ il "while" (cioè FINCHE').
 Il WHILE è un ciclo che esegue una operazione finchè la condizione non è raggiunta. */
 
 
-// Ho un array di Email valide
-const emailList = ['aaa', 'bbb', 'ccc', 'ddd']
+// // Ho un array di Email valide
+// const emailList = ['aaa', 'bbb', 'ccc', 'ddd']
 
-// Chiedo all'utente la sua Email
-const userEmail = prompt("Please enter your Email.");
-console.log('Input inserito: ' + userEmail);
+// // Chiedo all'utente la sua Email
+// const userEmail = prompt("Please enter your Email.");
+// console.log('Input inserito: ' + userEmail);
 
-// Verifico il mio criterio di validità del dato inserito dall'utente, in questo caso un banale conteggio di caratteri come esempio.
-const isValid_userEmail = userEmail.length >= 3;
-console.log('Email valida: ' + isValid_userEmail);
+// // Verifico il mio criterio di validità del dato inserito dall'utente, in questo caso un banale conteggio di caratteri come esempio.
+// const isValid_userEmail = userEmail.length >= 3;
+// console.log('Email valida: ' + isValid_userEmail);
 
 
 //*************WHILE***************/
@@ -136,32 +122,32 @@ console.log('Email valida: ' + isValid_userEmail);
 // }
 
 
-// SE la email inserita è un input valido
-if (isValid_userEmail) {
+// // SE la email inserita è un input valido
+// if (isValid_userEmail) {
 
-  // Dichiaro prima la mia variabile SENTINELLA e poi
-  let isEmailFound = false;
+//   // Dichiaro prima la mia variabile SENTINELLA e poi
+//   let isEmailFound = false;
 
-  // Inizializzo la "i" del WHILE prima del WHILE
-  let i = 0;
+//   // Inizializzo la "i" del WHILE prima del WHILE
+//   let i = 0;
 
-  // FINCHE' non trovo la Email nel mio array
-  while (i < emailList.length && !isEmailFound) {
-    const currentEmail = emailList[i];
+//   // FINCHE' non trovo la Email nel mio array
+//   while (i < emailList.length && !isEmailFound) {
+//     const currentEmail = emailList[i];
 
-    if (currentEmail === userEmail) {
-      isEmailFound = true;
-    }
+//     if (currentEmail === userEmail) {
+//       isEmailFound = true;
+//     }
 
-    i++;
-  }
+//     i++;
+//   }
 
-  let outputMessage = isEmailFound ? 'Email valida': 'Email non trovata';
+//   let outputMessage = isEmailFound ? 'Email valida': 'Email non trovata';
 
-  alert(outputMessage);
-  console.log(outputMessage)
+//   alert(outputMessage);
+//   console.log(outputMessage)
 
-} else {
-  alert('Email non valida');
-  console.log('Email non valida');
-}
+// } else {
+//   alert('Email non valida');
+//   console.log('Email non valida');
+// }
